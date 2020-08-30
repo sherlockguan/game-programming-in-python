@@ -5,8 +5,8 @@ sched = [(6, 8), (6, 12), (6, 7), (7, 8), (7, 10), (8, 9), (8, 10), (9, 12),
             (9, 10), (10, 11), (10, 12), (11, 12)]
 ################################################################################
 def bestTimeToParty(schedule):
-    start = sched[0][0]
-    end = sched[0][1]
+    start = schedule[0][0]
+    end = schedule[0][1]
     for c in schedule:
         start = min(c[0],start)
         end = max(c[1],end)
@@ -14,7 +14,7 @@ def bestTimeToParty(schedule):
         #print('end time is',end) 12
     
     #compute count of celebrities at each time
-    count = celebrityDensity(schedule, start, end)
+    count = celebrityDensity(sched, start, end)
     #print(count)
     
     maxcount = 0
@@ -32,9 +32,9 @@ def bestTimeToParty(schedule):
 ################################################################################
 
   #compute count of celebrities at each time
-def celebrityDensity(sched, start, end):
-    print(start)
-    print(end)
+def celebrityDensity(schedule, start, end):
+    #print(start)
+    #print(end)
     count = [0]*(end + 1)
     # count = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     for i in range(start, end + 1): # i = 6,7,8...12
