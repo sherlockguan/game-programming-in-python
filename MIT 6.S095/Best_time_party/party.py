@@ -14,12 +14,12 @@ def bestTimeToParty(schedule):
         #print('end time is',end) 12
     
     #compute count of celebrities at each time
-    count = celebrityDensity(sched, start, end)
+    count = celebrityDensity(schedule, start, end)
     #print(count)
     
     maxcount = 0
     for i in range(start, end + 1): # i = 6,7,8,9,..,12
-        if count[i] > maxcount: # eg. count[6] the num of celebrity at 6 
+        if count[i] > maxcount: # eg. count[6] the num of celebrity at 6 o'clock
             maxcount = count[i]
             time = i # think about why we can not print the i as time directly  i final get
                     #update as 12
